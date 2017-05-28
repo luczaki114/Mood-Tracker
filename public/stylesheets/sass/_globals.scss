@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+.mood-words {
+    margin-bottom: 16px;
+}
+
+.mandala-bg {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    img {
+        position: absolute;
+        height: 120vh; 
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);  
+    }
+}
+
+.user-story {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: calc( 100% - 32px );
+    margin: 0 auto;
+    min-height: 200px;
+    background: white;
+    border: 1px solid black;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
