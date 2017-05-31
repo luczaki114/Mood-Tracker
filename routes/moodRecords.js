@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
       throw err;
     }
     res.json(moodrecord);
-  })
+  });
 });
 
 /* GET one mood record */

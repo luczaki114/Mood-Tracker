@@ -8,66 +8,21 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-    <div ng-controller="moodTrackerController">
+    <main ng-view>
 
-        <div class="mandala-bg">
-            <img src="images/mandala.svg" alt="">
-        </div>
+    </main>
 
-        <div id="login-moodRecord" class="user-story">
-            <button ng-click="startRecordingMood()">Start Recording Mood</button>
-            <button ng-click="login()">Login</button>
-        </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
 
-        <div id="feeling-cloud" class="user-story" >
+    <!-- Login -->
+    <script src="app/shared/login/loginController.js"></script>
+    <script src="app/shared/login/loginService.js"></script>
 
-            <ul class="feelings">
-                <li class="feeling" 
-                    ng-repeat="feeling in moodRecord.feelings | filter: feeling.beenModified == true"
-                    ng-click="feelingSelected(feeling)">
-                    {{feeling.name}}
-                </li>
-            </ul>
-
-            <label for="add-feeling">Add a new Word?</label>
-            <input type="text" id="add-feeling" ng-model="feelingToAddName">
-            <button id="add-feeling-btn" ng-click="addfeeling(feelingToAddName)" >Add feeling</button>
-
-            <button ng-click="display('trigger-list')">Finished with feeling cloud</button>
-        </div>
-
-        <div id="feeling-slider" class="user-story" >
-
-            <div style="border: 1px solid red; width: 100%; padding: 10px;">{{selectedFeeling.name}}</div>
-
-            <input type="range" min="1" max="10" ng-model="selectedFeeling.intensity">
-
-            <button ng-click="saveFeelingIntensity(selectedFeeling)">Save Feeling Intensity</button>
-        </div>
-
-        <div id="trigger-list" class="user-story">
-
-            <ul class="triggers">
-                <li ng-repeat="trigger in moodRecord.triggers">
-                    <input type="checkbox" id="trigger-{{$index}}" ng-model="trigger.checked">
-                    <label for="trigger-{{$index}}">{{trigger.name}}</label>          
-                </li>
-            </ul>
-
-            <label for="add-word">Add a new trigger?</label>
-            <input type="text" id="add-trigger" ng-model="triggerToAdd">
-            <button id="add-trigger-btn" ng-click="addTrigger(triggerToAdd)" >Add Trigger</button>
-
-            <button ng-click="finish()">Finished adding triggers</button>
-
-        </div>
-
-        <div id="finish" class="user-story">
-            {{moodRecord}}
-        </div>
-    </div>
-
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="javascripts/app.js"></script>
+    <!-- MoodRecord -->
+    <script src="app/components/moodRecord/moodRecordController.js"></script>
+    <script src="app/components/moodRecord/moodRecordService.js"></script>
 </body>
 </html>

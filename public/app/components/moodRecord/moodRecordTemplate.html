@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="moodTracker">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mood Tracker</title>
-    <link rel="stylesheet" href="public/stylesheets/style.css">
-</head>
-<body>
-    <div ng-controller="moodTrackerController">
+<div ng-controller="MoodRecordController">
 
         <div class="mandala-bg">
-            <img src="../../public/images/mandala.svg" alt="">
+            <img src="images/mandala.svg" alt="">
         </div>
 
         <div id="login-moodRecord" class="user-story">
@@ -66,8 +56,3 @@
             {{moodRecord}}
         </div>
     </div>
-
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="public/scripts/app.js"></script>
-</body>
-</html>
